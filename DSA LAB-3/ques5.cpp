@@ -7,7 +7,7 @@ using namespace std;
 
 
 int evaluatepostfix(string postfix){
-    stack<char>s;
+    stack<int>s;
 
     for(char ch:postfix){
         //1.push operands onto stack
@@ -20,7 +20,7 @@ int evaluatepostfix(string postfix){
         int val1=s.top(); s.pop();
 
         switch(ch){
-            case '+':s.push(val1-val2);break;
+            case '+':s.push(val1+val2);break;
             case '-':s.push(val1-val2);break;
             case '*':s.push(val1*val2);break;
             case '/':s.push(val1/val2);break;
@@ -39,4 +39,5 @@ int main(){
     cout<<"evaluation of postfix: "<<evaluatepostfix(postfix)<<endl;
     return 0;
 }
+
 
